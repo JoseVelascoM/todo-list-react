@@ -43,8 +43,8 @@
 .icon-delete {
   font-size: 16px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -15px;
+  right: -15px;
 }
 
 .icon-delete:hover {
