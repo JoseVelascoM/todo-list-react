@@ -5,9 +5,9 @@ import { DeleteIcon } from './DeleteIcon';
 function TodoItem({ text, completed, onComplete, onDelete }) {
   return (
     <li className='todo-item'>
-      <CompleteIcon />
+      <CompleteIcon completed={completed} onComplete={onComplete} />
       <p className={`todo-item-p ${completed ? 'todo-item-p--complete' : ''}`}>{text}</p>
-      <DeleteIcon />
+      <DeleteIcon onDelete={onDelete} />
     </li>
   );
 }
