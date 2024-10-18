@@ -1,31 +1,11 @@
 import React, { useState } from 'react';
 
-import { TodoCounter } from './TodoCounter';
-import { TodoSearch } from './TodoSearch';
-import { TodoList } from './TodoList';
-import { TodoItem } from './TodoItem';
-import { CreateTodoButton } from './CreateTodoButton';
-
-function useLocalStorage(itemName, initialValue) {
-  const localStorageItems = localStorage.getItem(itemName);
-  let parsedItems;
-
-  if (!localStorageItems) {
-    localStorage.setItem(itemName, JSON.stringify(initialValue));
-    parsedItems = initialValue
-  } else {
-    parsedItems = JSON.parse(localStorageItems);
-  }
-
-  const [items, setItems] = useState(parsedItems);
-
-  const saveItems = (newItems) => {
-    localStorage.setItem(itemName, JSON.stringify(newItems));
-    setItems(newItems);
-  }
-
-  return [items, saveItems];
-}
+import { TodoCounter } from '../TodoCounter';
+import { TodoSearch } from '../TodoSearch';
+import { TodoList } from '../TodoList';
+import { TodoItem } from '../TodoItem';
+import { CreateTodoButton } from '../CreateTodoButton';
+import { useLocalStorage } from './useLocalStorage';
 
 function App() {
   const [searchValue, setSearchValue] = useState('');
