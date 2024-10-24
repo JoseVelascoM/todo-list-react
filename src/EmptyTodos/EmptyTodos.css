@@ -1,0 +1,9 @@
+.EmptyTodos-container {
+  margin: 24px;
+  padding: 16px;
+  text-align: center;
+  color: gray;
+  font-weight: normal;
+  border: 1px dashed gray;
+  border-radius: 10px;
+}
