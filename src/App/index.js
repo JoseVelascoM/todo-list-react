@@ -5,7 +5,7 @@ import { AppUI } from './AppUI';
 
 function App() {
   const [searchValue, setSearchValue] = useState('');
-  const [todos, saveTodos] = useLocalStorage('TODOS_V1', []);
+  const { items: todos, saveItems: saveTodos, loading, error } = useLocalStorage('TODOS_V1', []);
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -38,6 +38,8 @@ function App() {
       searchValue={searchValue}
       setSearchValue={setSearchValue}
       searchedTodos={searchedTodos}
+      loading={loading}
+      error={error}
       onCompleteTodo={handleCompleteTodo}
       onDeleteTodo={handleDeleteTodo}
     />

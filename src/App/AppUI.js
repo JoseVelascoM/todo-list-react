@@ -12,6 +12,8 @@ function AppUI({
   searchValue,
   setSearchValue,
   searchedTodos,
+  loading,
+  error,
   onCompleteTodo,
   onDeleteTodo,
 }) {
@@ -21,6 +23,10 @@ function AppUI({
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
+        {loading && <p>Cargando..</p>}
+        {error && <p>¡Ups, hubo un error al cargar los datos!</p>}
+        {(!loading && searchedTodos.length === 0) && <p>¡Es hora de crear tu primer TODO!</p>}
+
         {searchedTodos.map((todo, index) => (
           <TodoItem
             completed={todo.completed}
