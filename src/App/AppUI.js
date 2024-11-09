@@ -10,6 +10,7 @@ import { TodosError } from '../TodosError';
 import { EmptyTodos } from '../EmptyTodos';
 import { TodoContext } from '../TodoContext';
 import { Modal } from '../Modal';
+import { TodoForm } from '../TodoForm';
 
 function AppUI() {
   const {
@@ -19,7 +20,7 @@ function AppUI() {
     handleCompleteTodo,
     handleDeleteTodo,
     openModal,
-    setOpenModal
+    setOpenModal,
   } = useContext(TodoContext);
 
   function handleCreateTodoButtonOnClick() {
@@ -57,7 +58,7 @@ function AppUI() {
 
       {openModal && (
         <Modal>
-          La funcionalidad de agregar TODO
+          <TodoForm />
         </Modal>
       )}
     </React.Fragment>
